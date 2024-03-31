@@ -47,7 +47,6 @@ function getRandomSentence() {
 
 async function displayNextSentence() {
   const sentence = await getRandomSentence();
-  //   console.log(sentence);
 
   typeDisplay.innerText = "";
 
@@ -57,9 +56,7 @@ async function displayNextSentence() {
     const letterSpan = document.createElement("span");
     letterSpan.innerText = letter;
     typeDisplay.appendChild(letterSpan);
-    // letterSpan.classList.add("correct");
   });
-  //   console.log(oneWord);
   typeInput.value = "";
 
   StartTimer();
@@ -70,7 +67,6 @@ let originTime = 30;
 function StartTimer() {
   timer.innerText = originTime;
   startTime = new Date();
-  //   console.log(startTime);
   setInterval(() => {
     timer.innerText = originTime - getTimerTime();
     if (timer.innerText <= 0) TimeUp();
