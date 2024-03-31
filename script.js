@@ -1,6 +1,6 @@
 const randomSentence_URL_API = "https://api.quotable.io/random";
-// const typeDisplay = document.getElementById("typeDisplay");
-const typeDisplay = document.querySelector(".type-display");
+const typeDisplay = document.getElementById("typeDisplay");
+const typeInput = document.getElementById("typeInput");
 
 function getRandomSentence() {
   return fetch(randomSentence_URL_API)
@@ -12,7 +12,7 @@ async function displayNextSentence() {
   const sentence = await getRandomSentence();
   //   console.log(sentence);
 
-  typeDisplay.innerText = sentence;
+  typeDisplay.innerText = "";
 
   let oneWord = sentence.split("");
   //   console.log(oneWord);
@@ -23,6 +23,7 @@ async function displayNextSentence() {
     letterSpan.classList.add("correct");
   });
   //   console.log(oneWord);
+  typeInput.innerText = "";
 }
 
 displayNextSentence();
